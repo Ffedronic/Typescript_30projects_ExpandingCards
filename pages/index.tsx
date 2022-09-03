@@ -1,5 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import GridExpandingCards from '../components/GridExpandingCards'
+
+import { backgroundImages } from "../helpers/expandingCards-util"
+
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -11,7 +15,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>HomePage</h1>
-
+      <GridExpandingCards />
     </div>
   )
 }

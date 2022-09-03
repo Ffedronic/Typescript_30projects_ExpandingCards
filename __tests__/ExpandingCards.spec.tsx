@@ -1,5 +1,5 @@
 import { it, expect, describe } from "vitest";
-import { isValid } from "../helper/expandingCards-util";
+import { isValid } from "../helpers/expandingCards-util";
 
 describe("isTrue", () => {
   
