@@ -1,14 +1,7 @@
-import { MouseEventHandler } from "react";
+import { CardProps, isActive } from "../helpers/expandingCards-util";
 
-type Props = {
-  id: string;
-  url: string;
-  title: string;
-  isActive: MouseEventHandler<HTMLImageElement>;
-};
-
-function Card(props: Props) {
-  const { id, title, url, isActive } = props;
+function Card(props: CardProps) {
+  const { id, title, url } = props;
   return (
     <div
       id={`panel-${id}`}

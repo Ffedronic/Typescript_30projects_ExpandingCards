@@ -1,12 +1,11 @@
 .title {
-  font-family: Georgia, serif;
   font-size: 50px;
   text-align: center;
   margin: 20px auto;
 }
 
 .container {
-  width: 90vw;
+  width: 80vw;
   display: flex;
 }
 
@@ -14,8 +13,8 @@
   height: 80vh;
   overflow: hidden;
   border-radius: 50px;
-  flex: 0.8;
-  margin: 15px;
+  flex: 0.5;
+  margin: 10px;
   color: #fff;
   cursor: pointer;
   position: relative;
