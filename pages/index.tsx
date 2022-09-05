@@ -1,9 +1,32 @@
+import { EventHandler, MouseEventHandler, useEffect } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Card from "../components/Card";
 
 const Home: NextPage = () => {
-  
+  useEffect(() => {
+    const panels = document.querySelectorAll(".panel");
+    panels[2].classList.add("active");
+  }, []);
+
+  function isActive(event: any) {
+    removeActive();
+    addActive(event);
+  }
+
+  function addActive(event: any) {
+    const id: string = event.target.id.replace("image-", "");
+    const panel: HTMLElement = document.getElementById(`panel-${id}`)!;
+    panel.classList.add("active");
+  }
+
+  function removeActive() {
+    const panels = document.querySelectorAll(".panel");
+    for (let panel of panels) {
+      panel.classList.remove("active");
+    }
+  }
+
   const expandingCardsImages = [
     {
       id: "1",
@@ -44,7 +67,15 @@ const Home: NextPage = () => {
       </Head>
       <h1 className="title">Expanding Cards</h1>
       <section className="container">
-        {expandingCardsImages.map((item)=> <Card key={item.id} id={item.id} title={item.name} url={item.url}/>)}
+        {expandingCardsImages.map((item) => (
+          <Card
+            key={item.id}
+            id={item.id}
+            title={item.name}
+            url={item.url}
+            isActive={isActive}
+          />
+        ))}
       </section>
     </div>
   );

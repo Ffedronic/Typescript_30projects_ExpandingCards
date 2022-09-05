@@ -1,4 +1,5 @@
 .title {
+  font-family: Georgia, serif;
   font-size: 50px;
   text-align: center;
   margin: 20px auto;
@@ -10,19 +11,22 @@
 }
 
 .panel {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   height: 80vh;
+  overflow: hidden;
   border-radius: 50px;
-  flex: 0.5;
-  margin: 10px;
+  flex: 0.8;
+  margin: 15px;
   color: #fff;
   cursor: pointer;
   position: relative;
   transition: all 700ms ease-in;
 }
 
+.panel img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 .panel h2 {
   font-size: 24px;
   position: absolute;

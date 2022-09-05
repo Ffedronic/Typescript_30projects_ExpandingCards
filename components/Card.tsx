@@ -1,13 +1,14 @@
-import React from "react";
+import { MouseEventHandler } from "react";
 
 type Props = {
   id: string;
   url: string;
   title: string;
+  isActive: MouseEventHandler<HTMLImageElement>;
 };
 
-function Card(props:Props) {
-    const {id, title, url} = props
+function Card(props: Props) {
+  const { id, title, url, isActive } = props;
   return (
     <div
       id={`panel-${id}`}
@@ -17,6 +18,7 @@ function Card(props:Props) {
       }}
     >
       <h2>{title}</h2>
+      <img onClick={isActive} id={`image-${id}`} src={url} alt={title} />
     </div>
   );
 }
