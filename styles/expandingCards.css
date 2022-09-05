@@ -1,3 +1,9 @@
+.title {
+  font-size: 50px;
+  text-align: center;
+  margin: 20px auto;
+}
+
 .container {
   width: 90vw;
   display: flex;
@@ -27,21 +33,21 @@
 }
 
 .panel.active {
-    flex: 5;
-  }
-  
-  .panel.active h2 {
-    opacity: 1;
-    transition: all 0.3s ease-in 0.4s;
+  flex: 5;
+}
+
+.panel.active h2 {
+  opacity: 1;
+  transition: all 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
   }
 
-  @media (max-width: 480px) {
-    .container {
-      width: 100vw;
-    }
-  
-    .panel:nth-of-type(4),
-    .panel:nth-of-type(5) {
-      display: none;
-    }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
   }
+}
