@@ -1,24 +1,25 @@
-import { it, expect, describe } from "vitest";
-import { isValid } from "../helpers/expandingCards-util";
+import { it, expect, describe, vi } from "vitest";
+import { render, screen } from "@testing-library/react";
+import Card from "../components/Card";
 
-describe("isTrue", () => {
-  
-    it("should return a valid url", () => {
-    const urlToTest =
-      "https://cdn.pixabay.com/photo/2014/03/08/22/32/escalator-283448_960_720.jpg";
-
-    const validUrl = isValid(urlToTest);
-
-    expect(validUrl).toBe(urlToTest);
-  });
-
-  it("should return a invalid url", ()=>{
-    const emptyUrl = ""
-
-    const errorUrl = "https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png"
+describe("Card", () => {
+  it("should render the component", () => {
     
-    const invalidUrl = isValid(emptyUrl)
-
-    expect(invalidUrl).toBe(errorUrl)
-  })
+    render(
+      <Card
+        id="1"
+        title="test"
+        url="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png"
+      />
+    );
+    
+    const heading = screen.getByRole("heading", { level: 2, name: "test" });
+    const imageSource = screen.getByAltText("test").getAttribute("src");
+    
+    expect(imageSource).toBe(
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png"
+    );
+    
+    expect(heading).toBeDefined();
+  });
 });
