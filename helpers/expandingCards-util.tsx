@@ -1,5 +1,3 @@
-import { MouseEventHandler } from "react";
-
 export type CardProps = {
   id: string;
   url: string;

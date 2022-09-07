@@ -1,5 +1,5 @@
 import { it, expect, describe, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import Card from "../components/Card";
 
 describe("Card", () => {
@@ -21,5 +21,15 @@ describe("Card", () => {
     );
     
     expect(heading).toBeDefined();
+
+  });
+
+  it("should contains the classe active after one click", () => {
+    
+    fireEvent.click(screen.getByAltText("test"))
+
+    const activatedCard = document.getElementsByClassName("active")
+    
+    expect(activatedCard).toBeDefined()
   });
 });
